@@ -1,0 +1,9 @@
+.section {
+  background-color: #148ECF;
+}
+
+.filter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

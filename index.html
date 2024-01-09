@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AQS - Air Quality Station</title>
+  <link rel="icon" href="./assets/img/logo1.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="./assets/css/index.css">
+</head>
+
+<body>
+  <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="#">
+        <img src="./assets/img/logo.png" width="40" height="100">
+        <h4><b style="color: #148ECF;">AQS</b></h4>
+      </a>
+
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="#">
+          Home
+        </a>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Data
+          </a>
+
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="so2.html">
+              SO2
+            </a>
+            <a class="navbar-item" href="co.html">
+              CO
+            </a>
+            <a class="navbar-item" href="nh3.html">
+              NH3
+            </a>
+            <a class="navbar-item" href="suhu.html">
+              SUHU
+            </a>
+            <a class="navbar-item" href="kelembapan.html">
+              KELEMBAPAN
+            </a>
+            <a class="navbar-item" href="no2.html">
+              NO2
+            </a>
+            <a class="navbar-item" href="o3.html">
+              O3
+            </a>
+          </div>
+        </div>
+        <a class="navbar-item" href="dataHistorical.html">
+          Data Historical
+        </a>
+      </div>
+
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="field is-grouped">
+            <p class="control">
+              <a class="bd-tw-button button" data-social-network="Twitter" data-social-action="tweet"
+                data-social-target="https://bulma.io" target="_blank" href="https://instagram.com">
+                <span class="icon">
+                  <img src="./assets/img/Instagram.png" alt="">
+                </span>
+                <span class="has-text-link">
+                  Instagram
+                </span>
+              </a>
+            </p>
+            <p class="control">
+              <a class="button is-info" data-social-network="Twitter" data-social-action="tweet"
+                data-social-target="https://bulma.io" target="_blank" href="https://wa.me/+62 895-1300-1990">
+                <span class="icon">
+                  <img src="./assets/img/WhatsApp.png" alt="">
+                </span>
+                <span>
+                  WhatsApp
+                </span>
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+  </nav>
+  <!-- Content -->
+  <section class="video-section">
+    <video autoplay muted loop id="video-background">
+      <source src="./assets/vid/vid-bg.mp4" type="video/mp4">
+      <!-- Jika diperlukan, tambahkan source untuk format video lainnya -->
+      Your browser does not support HTML5 video.
+    </video>
+    <div class="content" style="padding: 100px; margin-top: 100px;">
+      <h1 class="title" style="color: white;">Air Quality Station</h1>
+      <p class="subtitle" style="color: white; margin-top: 50px">
+        Kualitas udara memainkan peran yang sangat vital dalam kehidupan kita, dan memahami tingkat polusi udara serta
+        dampaknya menjadi sangat penting. Kami menyajikan data terkini dan analisis mendalam mengenai kualitas udara,
+        memberikan Anda wawasan yang dapat membantu Anda membuat keputusan yang lebih baik untuk kesehatan Anda dan
+        lingkungan sekitar.
+      </p>
+
+      <div class="columns">
+        <div class="column">
+          <div class="card" style="background-color: transparent; border: solid white 2px;">
+            <div class="card-content">
+              <img src="./assets/img/Humidity.png" alt="" width="64" height="64">
+              <h4 style="color: white;">Tingkat Kelembapan</h4>
+              <div class="content" style="color: black;">
+                <h5 style="color: white;">49%</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="card" style="background-color: transparent; border: solid white 2px;">
+            <div class="card-content">
+              <img src="./assets/img/Temperature.png" alt="" width="64" height="64">
+              <h4 style="color: white;">Rata Rata Suhu</h4>
+              <div class="content" style="color: black;">
+                <h5 style="color: white;">27°C</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="tile is-ancestor mt-4 p-4">
+    <div class="tile is-parent">
+      <article class="tile is-child notification is-info">
+        <div class="content">
+          <p class="title" style="color: white;">Apa itu Air Quality Station?</p>
+          <div class="content"style="color: white;">
+            Air Quality Station merupakan Project Mahasiswa Program Studi D4 - Teknik Rekayasa Elektronika yang berguna untuk mengukur kualitas udara. Project memanfaatkan berbagai macam sensor. Diantaranya adalah Sensor DHT22, Sensor MQ131, Sensor MQ136 dan Sensor CJMCU6814.
+            Sensor DHT22 digunakan untuk pengukuran Suhu dan Kelembapan. Sensor MQ131 digunakan untuk pengukuran O3. Sensor MQ136 digunakan untuk pengukuran SO2. Dan Sensor CJMCU6814 digunakan untuk pengukuran CO, NH3, NO2.
+          </div>
+            <img src="./assets/img/alatjadi.jpeg" alt="" height="500" style="border-radius: 20px; margin-top: 50px;">
+        </div>
+        <hr>
+        <h5>AQS Team</h5>
+      </article>
+    </div>
+    <div class="tile is-vertical is-8">
+      <div class="tile">
+        <div class="tile is-parent is-vertical" >
+          <article class="tile is-child notification"style="background-color: transparent; border: solid #148ECF 2px">
+            <p class="title">DHT22</p>
+            <p class="subtitle">Sensor Pengukuran Suhu dan Kelembapan</p>
+            <div class="columns">
+              <div class="column">
+              </div>
+              <div class="column">
+                <img src="./assets/img/dht22.webp" alt="" width="180"height="100">
+              </div>
+            </div>
+          </article>
+          <article class="tile is-child notification"style="background-color: transparent; border: solid #148ECF 2px">
+            <p class="title">MQ131</p>
+            <p class="subtitle">Sensor O3</p>
+            <div class="columns">
+              <div class="column">
+              </div>
+              <div class="column">
+                <img src="./assets/img/MQ131.webp" alt="" width="180"height="100">
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="tile is-parent">
+          <article class="tile is-child notification"style="background-color: transparent; border: solid #148ECF 2px">
+            <p class="title">MQ136</p>
+            <p class="subtitle">Sensor SO2</p>
+            <figure class="image is-4by3">
+              <img src="./assets/img/MQ136.jpg">
+            </figure>
+            <p class="title">CJMCU6814</p>
+            <p class="subtitle">Sensor CO, NH3, NO2</p>
+            <figure class="image is-4by3">
+              <img src="./assets/img/CJMCU6814.jpg">
+            </figure>
+          </article>
+        </div>
+      </div>
+      <div class="tile is-parent">
+        <article class="tile is-child notification is-info">
+          <p class="subtitle">Our Contact</p>
+          <div class="content">
+            AQS Team
+            <hr>
+            WhatsApp : +62 895-1300-1990
+          </div>
+        </article>
+      </div>
+    </div>
+    
+  </div>
+</body>
+
+</html>

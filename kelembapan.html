@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AQS | KELEMBAPAN </title>
+  <link rel="icon" href="./assets/img/logo1.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="./assets/css/so2.css">
+</head>
+
+<body>
+  <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="index.html">
+        <img src="./assets/img/logo.png" width="40" height="100">
+        <h4><b style="color: #148ECF;">AQS</b></h4>
+      </a>
+
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="index.html">
+          Home
+        </a>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Data
+          </a>
+
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="so2.html">
+              SO2
+            </a>
+            <a class="navbar-item" href="co.html">
+              CO
+            </a>
+            <a class="navbar-item" href="nh3.html">
+              NH3
+            </a>
+            <a class="navbar-item" href="suhu.html">
+              SUHU
+            </a>
+            <a class="navbar-item" href="kelembapan.html">
+              KELEMBAPAN
+            </a>
+            <a class="navbar-item" href="no2.html">
+              NO2
+            </a>
+            <a class="navbar-item" href="o3.html">
+              O3
+            </a>
+          </div>
+        </div>
+        <a class="navbar-item" href="dataHistorical.html">
+          Data Historical
+        </a>
+      </div>
+
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="field is-grouped">
+            <p class="control">
+              <a class="bd-tw-button button" data-social-network="Twitter" data-social-action="tweet"
+                data-social-target="https://bulma.io" target="_blank" href="https://instagram.com">
+                <span class="icon">
+                  <img src="./assets/img/Instagram.png" alt="">
+                </span>
+                <span class="has-text-link">
+                  Instagram
+                </span>
+              </a>
+            </p>
+            <p class="control">
+              <a class="button is-info" data-social-network="Twitter" data-social-action="tweet"
+                data-social-target="https://bulma.io" target="_blank" href="https://wa.me/+62 895-1300-1990">
+                <span class="icon">
+                  <img src="./assets/img/WhatsApp.png" alt="">
+                </span>
+                <span>
+                  WhatsApp
+                </span>
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+  </nav>
+  <section class="section is-medium">
+    <h1 class="title" style="color: white;">Data Pengukuran Kelembapan</h1>
+    <h5 class="subtitle" style="color: white;">
+      Menggunakan Sensor DHT22
+    </h5>
+  </section>
+  <div class="container mt-4">
+    <h1>Data Hari Ini</h1>
+    <div class="columns">
+      <div class="column">
+        <canvas id="kelembapanChart" width="800" height="200"></canvas>
+      </div>
+      <div class="column filter">
+        <h3>Masukkan Index Kelembapan</h3>
+        <input class="input is-rounded is-info mt-4" type="number" placeholder="Index Kelembapan">
+        <button class="button is-info is-outlined is-rounded mt-4">
+          Filter
+        </button>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Ambil elemen input dan tombol
+    let inputkelembapan = document.querySelector('input[type="number"]');
+    let filterButton = document.querySelector('button');
+
+    // Fungsi untuk memfilter dan memperbarui grafik
+    filterButton.addEventListener('click', function () {
+      let indexkelembapan = parseInt(inputkelembapan.value);
+
+      // Filter data pengukuran sesuai dengan indexkelembapan yang dimasukkan
+      let filteredMeasurements = measurements.filter(entry => entry.value === indexkelembapan);
+
+      // Update labels dan data pada grafik
+      myChart.data.labels = filteredMeasurements.map(entry => entry.time);
+      myChart.data.datasets[0].data = filteredMeasurements.map(entry => entry.value);
+
+      // Perbarui grafik
+      myChart.update();
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="./assets/js/kelembapan.js"></script>
+</body>
+
+</html>
